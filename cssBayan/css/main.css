@@ -65,6 +65,10 @@ body {
     text-align: center;
 }
 
+.content img{
+    max-width: 100%;
+}
+
 .input-radio {
     width: 1px;
     height: 1px;
