@@ -1,17 +1,47 @@
-@media (min-width: 576px) {
+/* mobile 320x568 */
+@media (min-width: 568px) {
     .container {
-        max-width: 540px;
+        /* max-width: 100%; */
+        max-width: 520px;
     }
+
 }
 
-@media (min-width: 768px) {
+/* tablet 820x1180 */
+@media (min-width: 820px) {
     .container {
         max-width: 720px;
     }
+
+    .welcome__title {
+        font-size: 1.75rem;
+    }
+
+    .label-title {
+        font-size: 1.15rem;
+    }
+
+    .content img {
+        width: auto;
+    }
 }
 
-@media (min-width: 992px) {
+/* desktop 1920×1080 */
+@media (min-width: 1080px) {
     .container {
         max-width: 960px;
+    }
+
+    .welcome__title {
+        font-size: 2.25rem;
+    }
+
+    .label-title {
+        font-size: 1.25rem;
+    }
+
+    /* курсор только для desctop */
+    .label {
+        cursor: pointer;
     }
 }
