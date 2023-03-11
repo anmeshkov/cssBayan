@@ -6,6 +6,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #F5F5EB;
+    overflow-y: scroll; /* что бы страничка не дергалась */
 }
 
 .container {
@@ -19,6 +20,10 @@ body {
 .welcome__title {
     font-size: 2.25rem;
     font-weight: 800;
+}
+
+.tabs__wrapper {
+    cursor: pointer;
 }
 
 /* items */
@@ -83,9 +88,15 @@ body {
     text-align: center;
 }
 
+.content img {
+    transform: scale(0.3);
+    transition: transform .5s ease-out;
+}
+
 /* Animate
 ------------------------------------------ */
 .label__wrapper:hover~.content,
+.content:hover,
 .radio-btn:checked~.content {
     /* open tab */
     transition: max-height 2.5s;
@@ -106,4 +117,13 @@ body {
 
 .radio-btn:checked~.label__wrapper .label-icon {
     transform: rotate(0deg);
+}
+
+.label__wrapper:hover~.content img,
+.content:hover img {
+    transform: scale(1);
+}
+
+.radio-btn:checked~.content img {
+    transform: scale(1);
 }
