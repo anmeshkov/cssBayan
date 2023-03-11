@@ -6,7 +6,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #F5F5EB;
-    overflow-y: scroll;     /* что бы страничка не дергалась */
+    overflow-y: scroll;     /* so that the page does not twitch */
 }
 
 .container {
@@ -42,7 +42,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-
     border: 0.063rem solid #000;
     background-color: #fff;
     color: #3268dd;
@@ -96,7 +95,7 @@ body {
 
 /* Animate
 ------------------------------------------ */
-/* анимация таба при наведении курсора или нажатии */
+/* tab animation when hovering the cursor or clicking */
 .label:hover .content,
 .radio-btn:checked~.label .content {
     /* open tab */
@@ -121,7 +120,7 @@ body {
     transform: rotate(0deg);
 }
 
-/* анимация изображения */
+/* image animation */
 .label:hover .content img{
     transform: scale(1);
 }
@@ -130,7 +129,7 @@ body {
     transform: scale(1);
 }
 
-/* анимация при удерживании кнопки на элементе */
+/* animation when holding the button on the element */
 .label:active {
     opacity: 0.8;
 }
