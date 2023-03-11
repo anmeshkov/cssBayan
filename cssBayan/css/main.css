@@ -6,7 +6,8 @@ body {
     color: #212529;
     text-align: left;
     background-color: #F5F5EB;
-    overflow-y: scroll; /* что бы страничка не дергалась */
+    overflow-y: scroll;
+    /* что бы страничка не дергалась */
 }
 
 .container {
@@ -22,12 +23,7 @@ body {
     font-weight: 800;
 }
 
-.tabs__wrapper {
-    cursor: pointer;
-}
-
 /* items */
-
 .item {
     overflow: hidden;
     margin-bottom: 1rem;
@@ -45,20 +41,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+
     border: 1px solid #000;
     background-color: #fff;
     color: #3268dd;
     transition: color .3s ease-in-out;
-    cursor: pointer;
 }
 
 .label {
     display: block;
-    padding: 1rem;
+    cursor: pointer;
+}
+
+.label-title {
     width: 100%;
     font-size: 1.25rem;
     font-weight: 700;
-    cursor: pointer;
 }
 
 .label__wrapper:hover {
@@ -68,8 +67,8 @@ body {
 .label-icon {
     width: 24px;
     height: 24px;
-    margin: 1rem;
     visibility: hidden;
+    margin-left: 1rem;
     background-image: url("../images/cross_icon.svg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -95,9 +94,9 @@ body {
 
 /* Animate
 ------------------------------------------ */
-.label__wrapper:hover~.content,
-.content:hover,
-.radio-btn:checked~.content {
+/* анимация таба при наведении курсора или нажатии */
+.label:hover .content,
+.radio-btn:checked~.label .content {
     /* open tab */
     transition: max-height 2.5s;
     padding: 1rem;
@@ -105,25 +104,25 @@ body {
 }
 
 /* change label color */
-.tabs__wrapper:hover .label__wrapper,
-.radio-btn:checked~.label__wrapper {
+.content__wrapper:hover .label__wrapper,
+.radio-btn:checked~.label .label__wrapper {
     color: #212529;
 }
 
-/* animate icon */
-.tabs__wrapper:hover .label-icon {
+/* animate icon show/hide */
+.content__wrapper:hover .label-icon {
     visibility: visible;
 }
 
-.radio-btn:checked~.label__wrapper .label-icon {
+/* animate icon rotate */
+.radio-btn:checked~.label .label-icon {
     transform: rotate(0deg);
 }
 
-.label__wrapper:hover~.content img,
-.content:hover img {
+.label:hover .content img{
     transform: scale(1);
 }
 
-.radio-btn:checked~.content img {
+.radio-btn:checked~.label .content img {
     transform: scale(1);
 }
