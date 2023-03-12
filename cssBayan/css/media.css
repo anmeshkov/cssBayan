@@ -1,0 +1,55 @@
+/* mobile 320x568 */
+@media (min-width: 568px) {
+    .container {
+        /* max-width: 100%; */
+        max-width: 520px;
+    }
+
+}
+
+/* tablet 820x1180 */
+@media (min-width: 820px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .welcome__title {
+        font-size: 1.75rem;
+    }
+
+    .label-title {
+        font-size: 1.15rem;
+    }
+
+    .content img {
+        width: auto;
+    }
+}
+
+/* desktop 1920×1080 */
+@media (min-width: 1080px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .welcome__title {
+        font-size: 2.25rem;
+    }
+
+    .label-title {
+        font-size: 1.25rem;
+    }
+
+    /* the cursor is for desktop only */
+    .label {
+        cursor: pointer;
+    }
+
+    /* .label:hover is for desktop only */
+    .label:hover .content {
+        /* open tab */
+        transition: max-height 2.5s;
+        padding: 1rem;
+        max-height: 100vh;
+    }
+}

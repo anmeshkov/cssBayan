@@ -1,0 +1,140 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #F5F5EB;
+    overflow-y: scroll;     /* so that the page does not twitch */
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+.welcome__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* items */
+.item {
+    overflow: hidden;
+    margin-bottom: 1rem;
+    -webkit-box-shadow: 0.25rem 0.25rem 0 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0.25rem 0.25rem 0 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 0.25rem 0.25rem 0 0 rgba(34, 60, 80, 0.2);
+}
+
+.radio-btn {
+    display: none;
+}
+
+/* label */
+.label__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 0.063rem solid #000;
+    background-color: #fff;
+    color: #3268dd;
+    transition: color 0.3s ease-in-out;
+}
+
+.label {
+    display: block;
+}
+
+
+.label-title {
+    max-width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.label__wrapper:hover {
+    background-color: rgba(184, 253, 236, 0.568);
+}
+
+.label-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    visibility: hidden;
+    margin-left: 1rem;
+    background-image: url("../images/cross_icon.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: contain;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.content {
+    border: 0.063rem solid #000;
+    background-color: beige;
+    /* close tab */
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    max-height: 0;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+    transform: scale(0.3);
+    transition: transform 0.5s ease-out;
+}
+
+/* Animate
+------------------------------------------ */
+/* tab animation when hovering the cursor or clicking */
+/* .label:hover .content, */
+.radio-btn:checked~.label .content {
+    /* open tab */
+    transition: max-height 2.5s;
+    padding: 1rem;
+    max-height: 100vh;
+}
+
+/* change label color */
+.content__wrapper:hover .label__wrapper,
+.radio-btn:checked~.label .label__wrapper {
+    color: #212529;
+}
+
+/* animate icon show/hide */
+.content__wrapper:hover .label-icon {
+    visibility: visible;
+}
+
+/* animate icon rotate */
+.radio-btn:checked~.label .label-icon {
+    transform: rotate(0deg);
+}
+
+/* image animation */
+.label:hover .content img{
+    transform: scale(1);
+}
+
+.radio-btn:checked~.label .content img {
+    transform: scale(1);
+}
+
+/* animation when :active on the element */
+.label:active {
+    opacity: 0.8;
+}
+
+.label:active .label__wrapper,
+.radio-btn:checked~.label:active .label__wrapper {
+    color: #3268dd;
+}
