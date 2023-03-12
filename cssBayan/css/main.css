@@ -96,7 +96,7 @@ body {
 /* Animate
 ------------------------------------------ */
 /* tab animation when hovering the cursor or clicking */
-.label:hover .content,
+/* .label:hover .content, */
 .radio-btn:checked~.label .content {
     /* open tab */
     transition: max-height 2.5s;
@@ -129,7 +129,7 @@ body {
     transform: scale(1);
 }
 
-/* animation when holding the button on the element */
+/* animation when :active on the element */
 .label:active {
     opacity: 0.8;
 }

@@ -44,4 +44,12 @@
     .label {
         cursor: pointer;
     }
+
+    /* .label:hover is for desktop only */
+    .label:hover .content {
+        /* open tab */
+        transition: max-height 2.5s;
+        padding: 1rem;
+        max-height: 100vh;
+    }
 }
